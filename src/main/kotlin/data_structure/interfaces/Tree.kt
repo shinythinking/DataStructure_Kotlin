@@ -1,11 +1,9 @@
 package shinythinking.data_structure.interfaces
 
-import shinythinking.data_structure.core.NodeForTree
+import data_structure.interfaces.DataStructure
 
-interface Tree<T> {
-    fun createTree(): Tree<T>
-    fun root(): NodeForTree<T>
-    fun addChild(parent: NodeForTree<T>, child: NodeForTree<T>)
-    fun removeNode(nodeForTree: NodeForTree<T>)
-    fun traverse(): String
+interface Tree<T : Comparable<T>> : DataStructure<T> {
+    fun insert(value: T): Boolean
+    fun search(value: T): Boolean
+    fun delete(value: T): Boolean
 }
